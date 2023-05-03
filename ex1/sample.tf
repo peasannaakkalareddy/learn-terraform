@@ -4,7 +4,6 @@ data "aws_ami" "centos" {
   owners      = ["973714476881"]
 }
 
-
 resource "aws_instance" "frontend" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
@@ -19,7 +18,7 @@ resource "aws_route53_record" "frontend" {
   name    = "frontend-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.frontend.private_ip]
 }
 
 resource "aws_instance" "mongodb" {
@@ -36,7 +35,7 @@ resource "aws_route53_record" "mongodb" {
   name    = "mongodb-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.mongodb.private_ip]
 }
 
 resource "aws_instance" "catalogue" {
@@ -53,7 +52,7 @@ resource "aws_route53_record" "catalogue" {
   name    = "catalogue-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.catalogue.private_ip]
 }
 
 resource "aws_instance" "user" {
@@ -70,7 +69,7 @@ resource "aws_route53_record" "user" {
   name    = "user-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.user.private_ip]
 }
 
 
@@ -88,7 +87,7 @@ resource "aws_route53_record" "redis" {
   name    = "redis-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.redis.private_ip]
 }
 resource "aws_instance" "cart" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -104,7 +103,7 @@ resource "aws_route53_record" "cart" {
   name    = "cart-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.cart.private_ip]
 }
 resource "aws_instance" "mysql" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -120,7 +119,7 @@ resource "aws_route53_record" "mysql" {
   name    = "mysql-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.mysql.private_ip]
 }
 
 resource "aws_instance" "shipping" {
@@ -137,7 +136,7 @@ resource "aws_route53_record" "shipping" {
   name    = "shipping-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.shipping.private_ip]
 }
 resource "aws_instance" "rabbitmq" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -153,7 +152,7 @@ resource "aws_route53_record" "rabbitmq" {
   name    = "rabbitmq-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.rabbitmq.private_ip]
 }
 
 resource "aws_instance" "payment" {
