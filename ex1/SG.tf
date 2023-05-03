@@ -1,4 +1,8 @@
-
+data "aws_ami" "centos" {
+  owners = ["973714476881"]
+  most_recent =  true
+  name_regex = "Centos-8-DevOps-Practice"
+}
 data "aws_security_group" "allow_all" {
   name="allow_all"
 }
@@ -15,9 +19,9 @@ resource "aws_security_group" "frontend" {
   }
   }
 resource "aws_route53_record" "frontend" {
-  zone_id = Z0299491JAQ87HTY8OKC
+  zone_id = "Z0299491JAQ87HTY8OKC"
   name    = "frontend-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.fronend.private_ip]
 }
