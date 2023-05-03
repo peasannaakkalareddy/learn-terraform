@@ -4,22 +4,6 @@ data "aws_ami" "centos" {
   owners      = ["973714476881"]
 }
 
-resource "aws_instance" "HelloWorld" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "t3.micro"
-
-  tags = {
-    Name = "HelloWorld"
-  }
-}
-
-resource "aws_route53_record" "HelloWorld" {
-  zone_id = "Z0299491JAQ87HTY8OKC"
-  name    = "HelloWorld-dev.cskvsmi.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
-}
 
 resource "aws_instance" "frontend" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
