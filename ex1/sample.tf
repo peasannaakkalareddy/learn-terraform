@@ -18,7 +18,7 @@ resource "aws_route53_record" "HelloWorld" {
   name    = "HelloWorld-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.Private_ip]
+  records = [aws_instance.HelloWorld.private_ip]
 }
 
 resource "aws_instance" "frontend" {
