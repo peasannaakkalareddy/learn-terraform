@@ -169,5 +169,5 @@ resource "aws_route53_record" "payment" {
   name    = "payment-dev.cskvsmi.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.HelloWorld.private_ip]
+  records = [aws_instance.payment.private_ip]
 }
