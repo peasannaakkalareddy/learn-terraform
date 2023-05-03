@@ -4,7 +4,7 @@ data "aws_ami" "centos" {
   owners      = ["973714476881"]
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "HelloWorld" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
 
