@@ -6,4 +6,3 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
-#1
