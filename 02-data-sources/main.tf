@@ -8,6 +8,8 @@
 
   data "aws_security_group" "test" {}
 
+data "aws_security_group" "single" {}
+
   output "all_sg"{
     value = data.aws_security_group.test
   }
