@@ -20,7 +20,7 @@ resource "aws_security_group" "frontend" {
   }
 resource "aws_route53_record" "frontend" {
   zone_id = "Z0299491JAQ87HTY8OKC"
-  name    = "frontend-dev.cskvsmi.online"
+  name    = "frontend-dev.panda4u.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.frontend.private_ip]
